@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PaperplaneChat</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/aiChat.css?v=1.0" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PaperplaneChat.styles.css" asp-append-version="true" />   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
+</head>
+<body>
+    <header>
+        <nav class="navbar border-bottom fixed-top box-shadow d-flex justify-content-between align-items-center flex-nowrap" style="height: 60px;">
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand ps-3" asp-area="" asp-controller="Home" asp-action="Index">Paperplane AI Chat</a>
+                <div id="flyContainer" class="fly-container d-flex align-items-center">
+                    <p id="flyAwayBanner" class="d-none">Plane Away</p> 
+                    <i id="flyAwayBannerString" class="fa-solid fa-minus d-none"></i>
+                    <i class="fa-solid fa-paper-plane flyAway-icon"></i>
+                </div>               
+            </div>
+               
+            <div class="d-flex align-items-center">               
+                <div class="vr"></div>
+                <a class="nav-link nav-font px-3" asp-area="" asp-controller="Home" asp-action="GenerateImage">Image Generator</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer border-top fixed-bottom text-center text-muted" style="height: 60px;">
+        <div class="container">
+            &copy; 2025 - PaperplaneChat - <i class="fa-solid fa-paper-plane custom-icon-small"></i>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/aiChat.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

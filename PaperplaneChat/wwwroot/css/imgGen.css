@@ -1,0 +1,82 @@
+﻿html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Press Start 2P", system-ui;
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+/*.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}*/
+
+.full-height {
+    height: calc(100vh - 57px);
+}
+
+@media (max-width: 768px) {
+    .full-height {
+        height: auto;
+    }
+    #sidebar{
+        border: none !important;
+    }
+}
+
+#sidebar {
+    overflow-y: auto;
+}
+
+#prompt {
+    overflow-y: scroll;
+    font-size: 12px;
+    border: none;
+}
+
+    #prompt:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+.btn-primary {
+    background-color: #0d6efd;
+    font-size: 12px;
+}
+
+    .btn-primary:focus {
+        border: none;
+        box-shadow: none;
+    }
+
+.error::placeholder {
+    color: yellow;
+}

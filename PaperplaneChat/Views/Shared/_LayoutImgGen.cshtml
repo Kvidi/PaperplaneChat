@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PaperplaneChat</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/imgGen.css?v=1.0" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PaperplaneChat.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sen:wght@400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar border-bottom box-shadow d-flex justify-content-between align-items-center flex-nowrap">
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand m-0 px-1 px-sm-3" asp-area="" asp-controller="Home" asp-action="GenerateImage">Image Generator</a>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="vr"></div>
+                <a class="nav-link px-2 px-sm-3" asp-area="" asp-controller="Home" asp-action="Index">AI Chat</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid m-0 p-0">
+        <main role="main" class="full-height">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - TextToImageAI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer> *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/imgGen.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

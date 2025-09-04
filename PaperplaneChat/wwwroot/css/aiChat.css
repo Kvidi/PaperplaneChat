@@ -1,0 +1,269 @@
+
+html {
+  font-size: 14px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: url('/images/Paperplanes-background.png') repeat;
+    /*background-size: */
+}
+.navbar {
+    background: #212121;
+    color: #fff;
+}
+.nav-font{
+    font-size: 16px;
+}
+.footer {
+    background: #212121;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+.container-full {
+    height: calc(100dvh - 120px); /* Full height without navbar and footer */
+}
+
+/* Chat container*/
+.chat-container {
+    position: relative;
+    background: #212121;
+    max-width: 900px;
+    margin: 60px auto 60px auto;
+    overflow: scroll;
+}
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Initial state: only center the top and bottom div */
+.initial-state {
+    justify-content: center;
+    align-items: center;
+}
+/* After submit: spread out */
+.final-state {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Top position */
+.chat-header {
+    flex: 0 0 40px; /* Don't grow, don't shrink, fixed at 76px */
+    overflow: hidden;
+}
+
+/* Chat messages area */
+.chat-messages-wrapper {
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 20px 35px;
+    transition: opacity 0.3s ease;
+    position: relative;
+}
+    /* For those browsers who need */
+    .chat-messages-wrapper::-webkit-scrollbar {
+        width: 5px; /* Adjust scrollbar width */
+    }
+    .chat-messages-wrapper::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.2); /* Light-colored thumb */
+        border-radius: 10px;
+    }
+    .chat-messages-wrapper::-webkit-scrollbar-track {
+        background: transparent; /* Makes track invisible */
+    }
+
+/* Chat input area */
+.chat-input {
+    background: #303030;
+    max-width: 800px;
+}
+/* Chat textarea styling */
+.chat-input textarea {
+    width: 100%;
+    height: 70px;
+    resize: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    background: transparent;
+    color: #fff;
+}
+    /* Remove default focus outlines */
+    .chat-input textarea:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+form {
+    border-radius: 10px;
+}
+
+/* Send button styling */
+.btn-send {
+    background: #303030;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+}
+/* New chat */
+.btn-reSend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+}
+/* Icons */
+.custom-icon-big {
+    font-size: 2rem;    
+    cursor: pointer;    
+}
+.custom-icon-small {
+    font-size: 0.75rem;
+}
+
+/* Fly-away animation */
+@keyframes flyAway {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }    
+
+    100% {
+        transform: translate(100vw, 0) rotate(70deg); /* Move off-screen to the right */
+        opacity: 0;
+    }
+}
+@keyframes flyAwayBanner {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(100vw, 0) rotate(0deg); /* Move off-screen to the right */
+        opacity: 0;
+    }
+}
+/* Classes for the animation */
+.fly-container {
+    padding: 5px;
+    text-align: center;
+}
+.fly-away-banner {
+    animation: flyAwayBanner 5s ease-out forwards;
+    border: solid 1px #fff;
+    display: inline-block;
+    height: 75%;
+    padding: 0px 5px;
+    text-align: center;
+    margin-top: 3px;
+}
+.fly-away-banner-string {
+    animation: flyAwayBanner 5s ease-out forwards;
+}
+.fly-away {
+    animation: flyAway 5s ease-out forwards;
+}
+.flyAway-icon {
+    z-index: 9999;
+    font-size: 1.25rem;
+}
+
+/* Chat message styles */
+.message {
+    margin-bottom: 20px;
+}
+
+    .message.user {
+        text-align: right;
+    }
+
+    .message.bot {
+        text-align: left;
+    }
+
+    .message p {
+        display: inline-block;
+        text-align: left;
+        padding: 10px 15px;
+        margin: 0;
+        border-radius: 20px;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+
+    .message.user p {
+        max-width: 70%;
+        background: #318f94;
+        color: #fff;
+    }
+
+    .message.bot p {
+        width: 100%;
+        color: #fff;
+    }
+
+/* Button to scroll to the top of a message */
+.btn-scroll-to-top-msg {
+    background: transparent;
+    border: none;        
+    margin-left: 10px;
+}
+
+/* Button to scroll to the bottom of the chat area */
+.btn-scroll-to-bottom-chat {
+    background: transparent;   
+    border: none;    
+    font-size: 35px;
+    position: sticky;
+    bottom: 20px; 
+    left: calc(100% - 60px);
+    z-index: 1000;
+    display: none; /* Initially hidden until needed */
+}
+
+/* Custom tooltip styling */
+.custom-tooltip-light {
+    --bs-tooltip-bg: #303030;
+    --bs-tooltip-color: #fff;
+    --bs-tooltip-font-size: 0.8rem;
+}
+.custom-tooltip-dark {
+    --bs-tooltip-bg: #212121;
+    --bs-tooltip-color: #fff;
+    --bs-tooltip-font-size: 0.8rem;
+}

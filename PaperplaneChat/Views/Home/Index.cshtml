@@ -1,0 +1,55 @@
+﻿@model PaperplaneChat.Models.VM.ChatVM
+
+@{
+    ViewData["Title"] = "AI Chat";
+}
+
+<div class="chat-container container-full d-flex flex-column" id="chatContainer">
+    <div id="layout" class="layout-container initial-state">
+        <!-- Header -->
+        <div id="chatHeader" class="chat-header mb-1 w-100 text-center fw-bold">
+            <h3 id="headerText" class="m-0">Send your paperplane</h3>
+        </div>
+
+
+        <!-- Wrapper for chat messages and scroll button -->
+        <div id="chatMessagesWrapper" class="chat-messages-wrapper w-100 d-none">
+            <!-- Chat messages area -->
+            <div id="chatMessages" class="chat-messages w-100">
+                @await Html.PartialAsync("_ChatMessages", Model)
+            </div>
+
+            <!-- Button to scroll to the bottom of the chat area -->
+            <button id="btnScrollToBottomChat" class="btn-scroll-to-bottom-chat pt-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip-light" title="Scroll to bottom">
+                <i class="fa-regular fa-circle-down"></i>
+            </button>
+        </div>
+
+
+        <!-- Chat input area -->
+        <div class="chat-input px-2 pb-2 mt-1 border-0 rounded-5 w-100 mb-3">
+            <form asp-action="Index" id="chatForm">
+                <textarea asp-for="UserMessage" name="UserMessage" id="userInput" placeholder="Type your message..."></textarea>
+
+                <div class="d-flex justify-content-between border-0 p-1">
+                    <a asp-action="ResetChat" class="btn-reSend ms-1">
+                        <div class="d-flex align-items-center pt-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip-dark" title="New chat">
+                            <i class="fa-solid fa-note-sticky custom-icon-medium"></i>
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <small style="font-size: 12px;">Fold a new plane</small>
+                    </a>
+                    <button type="submit" class="btn-send" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip-dark" title="Send">
+                        <i class="fa-solid fa-paper-plane custom-icon-big"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>   
+</div>
+
+
+<script>
+    // Pass the firstMessageSent state to the client-side
+    sessionStorage.setItem('firstMessageSent', '@Model.FirstMessageSent'.toLowerCase());
+</script>

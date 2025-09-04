@@ -1,0 +1,14 @@
+﻿@model PaperplaneChat.Models.VM.ChatVM
+
+@foreach (var item in Model.ChatHistory)
+{
+    <div class="message @(item.Role == "User" ? "user" : "bot")">
+        <p>@Html.Raw(item.Content)</p>
+        @if (item.Role == "Bot")
+        {
+            <button id="btnScrollToTopMsg" class="btn-scroll-to-top-msg" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip-light" title="Scroll to top of the message">
+                <i class="fa-regular fa-circle-up"></i>
+            </button>
+        }
+    </div>
+}

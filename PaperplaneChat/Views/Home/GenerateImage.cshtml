@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Image Generator";
+    Layout = "_LayoutImgGen";
+}
+
+<div class="row full-height m-0">
+    <div id="sidebar" class="col-12 col-md-3 col-lg-3 col-xl-2 border-end align-items-center justify-content-center p-3">
+        <div id="prompt-area">
+            <label for="prompt" class="form-label pb-2"><strong>Prompt</strong></label>
+            <div class="pb-3">
+                <textarea id="prompt" class="form-control" rows="5" placeholder="Add descriptive text here..."></textarea>
+            </div>
+            <div id="error-message" class="text-warning"></div>
+            <div class="m-0">
+                <button id="generateBtn" class="btn btn-primary">Generate</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-9 col-lg-9 col-xl-10 d-flex align-items-center justify-content-center p-3">
+        <div id="image-container">
+            <div id="bot-loading" class="justify-content-start d-none text-primary">
+                <span class="spinner-border" role="status"></span>
+                <span>Loading...</span>
+            </div>
+            <div id="img-div"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("generateBtn").addEventListener("click", function(event) { event.preventDefault() });
+</script>
+
