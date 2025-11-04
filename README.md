@@ -5,13 +5,13 @@ Paperplane Chat is an ASP.NET Core web application that integrates with **Azure 
 Users interact with an AI-powered chatbot and generate images from text prompts in the browser.
 
 ## Features
-- 💬 AI Chat powered by **Azure OpenAI**
-- 🖼️ Image generation using **Azure OpenAI Image API**
-- 🎨 Responsive UI with Bootstrap
-- 💻 JavaScript & jQuery frontend logic
-- 🗂️ Session-stored chat history (conversation persists during browser session)
-- ⚡ Smooth chat experience with "scroll-to-bottom" and "scroll-to-message" features
-- 📩 Loading indicators and tooltips for better UX
+- AI Chat powered by **Azure OpenAI**
+- Image generation using **Azure OpenAI Image API**
+- Responsive UI with Bootstrap
+- JavaScript & jQuery frontend logic
+- Session-stored chat history (conversation persists during browser session)
+- Smooth chat experience with "scroll-to-bottom" and "scroll-to-message" features
+- Loading indicators and tooltips for better UX
 
 ## Technology Stack
 - **Backend:** C#, .NET 9, ASP.NET Core MVC 
